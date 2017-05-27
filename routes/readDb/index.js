@@ -30,8 +30,8 @@ router.get('/articles/list', (req, res) => {
 });
 
 // get single article
-router.get('/articles/article/:identification', (req, res) => {
-	Article.findById(req.params.identification, (err, article) => {
+router.get('/articles/article/:id', (req, res) => {
+	Article.findById(req.params.id, (err, article) => {
 		console.log(article);
 		return;
 	});
