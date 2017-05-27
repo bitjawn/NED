@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	div(class='row')
+		h2(class='header') #{header}
+		ul(class='accordion' data-accordion data-allow-all-closed='true')
+			each article, i in articles
+				li(class='accordion-item' data-accordion-item)
+					a(href='#article.id' class='accordion-title title')= article.title
+					div(id='article.id' class='accordion-content' data-tab-content)
+						span(class='label')= 'Author: ' + article.author
+							
+						p= article.body

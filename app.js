@@ -17,10 +17,14 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-const router = require('./routes/index');
+const readDb = require('./routes/readDb/index');
+// const writeDb = require('./routes/writeDb/index');
+const index = require('./routes/index');
 
 // set router
-app.use('/', router);
+app.use('/read', readDb);
+// app.use('/write', writeDb);
+app.use('/', index);
 
 // set port
 app.set('port', (process.env.PORT || 3000));

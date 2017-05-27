@@ -3,19 +3,47 @@ html
 	head
 		title #{title}
 		script(src="https://use.fontawesome.com/fc14e58e15.js")
-		link(rel='stylesheet' href='/css/foundation.css')
-		link(rel="stylesheet" href='/css/icons/foundation-icons.css')
-		link(rel='stylesheet' href='/css/app.css')
+		link(rel="stylesheet" href="/css/foundation.css")
+		link(rel="stylesheet" href="/css/icons/foundation-icons.css")
+		link(rel="stylesheet" href="/css/app.css")
 	body
-		script(src='/js/vendor/jquery.js')
+		script(src="/js/vendor/jquery.js")
+		div(class='title-bar' data-responsive-toggle='main-menu' data-hide-for='medium')
+			button(class="menu-icon" type='button' data-toggle='main-menu')
+			div(class="title-bar-title")= 'Menu'
+			
+		div(class='top-bar' id='main-menu')
+			div(class="top-bar-left")
+				ul(class="dropdown menu" data-responsive-menu="drilldown medium-dropdown")
+					li(class="menu-text menu-header")= 'Knowledgebase App'
+					li
+						a(href="/")= 'Browse Site'
+						ul(class="menu vertical")
+							li
+								a(href="/")= "Home"
+							li
+								a(href="/about")= "About"
+							li
+								a(href="#")= "Contact"
+			div(class='top-bar-right')
+				ul(class="dropdown menu" data-responsive-menu="drilldown medium-dropdown")
+					li(class="menu-text menu-header")
+					li
+						a(href="/read/articles/list")= 'Browse Articles'
+						ul(class="menu vertical")
+							li
+								a(href="/read/articles/list")= "Articles"
+							li
+								a(href='#')= "Authors"
+		
 		.row
 			block content
 		br
 		hr
-		div(class='row')
+		div(class="row")
 			footer
 				p Copyright &copy; 2017
-		script(src='/js/vendor/what-input.js')
-		script(src='/js/vendor/foundation.js')
-		script(src='/js/resources.js')
-		script(src='/js/app.js')
+		script(src="/js/vendor/what-input.js")
+		script(src="/js/vendor/foundation.js")
+		script(src="/js/resources.js")
+		script(src="/js/app.js")
