@@ -1,6 +1,17 @@
 extends ../layout
 
 block content
+	div(class='row top')
+		div(class='left-floater')
+			a(href='#' class='button primary' data-toggle='offCanvas') #{header}
+		div(class='right-floater')
+			form(class='search-form' method='POST', actin='/articles/add')
+				#form-input-group
+					div(class='input-group')
+						span(class='input-group-label')
+							i(class='fa fa-search')
+						input.input-group-field(name='title', type='text' placeholder='Search' required)
+		
 	div(class='off-canvas-wrapper')
 		div(class='off-canvas position-right' id='offCanvas' data-off-canvas)
 		button(class='close-button' aria-label='Close menu' type='button' data-close)
@@ -8,7 +19,7 @@ block content
 		div(class='off-canvas-content' data-off-canvas-content)
 			
 	div(class='row articles')
-		a(href='#' class='button primary' data-toggle='offCanvas') #{header}
+		//- a(href='#' class='button primary' data-toggle='offCanvas') #{header}
 		div(class='v-scroll list')
 			ul(class='accordion' data-accordion data-allow-all-closed='true')
 				each article, i in articles

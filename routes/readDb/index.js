@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cfc = require('../../modules/cfc');
 const router = express();
 
-mongoose.connect('mongodb://localhost/nodekb');
+mongoose.connect('mongodb://_reader:readdeeznuts@localhost/nodekb');
 let db = mongoose.connection;
 
 // check connection
