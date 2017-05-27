@@ -35,7 +35,7 @@ router.post('/articles/add', (req, res) => {
 			console.log(err);
 			return;
 		} else {
-			res.redirect('/');
+			res.redirect('/read/articles/list');
 		}
 	});
 
