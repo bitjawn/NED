@@ -1,12 +1,19 @@
 extends ../layout
 
 block content
-	div(class='row')
-		h2(class='header') #{header}
-		ul(class='accordion' data-accordion data-allow-all-closed='true')
-			each article, i in articles
-				li(class='accordion-item' data-accordion-item)
-					a(href='#article.id' class='accordion-title title')= article.title
-					div(id='article.id' class='accordion-content' data-tab-content)
-						span(class='label')= 'Author: ' + article.author							
-						p= article.body
+	div(class='off-canvas-wrapper')
+		div(class='off-canvas position-right' id='offCanvas' data-off-canvas)
+		button(class='close-button' aria-label='Close menu' type='button' data-close)
+			//- span(aria-hidden='true')				
+		div(class='off-canvas-content' data-off-canvas-content)
+			
+	div(class='row articles')
+		a(href='#' class='button primary' data-toggle='offCanvas') #{header}
+		div(class='v-scroll list')
+			ul(class='accordion' data-accordion data-allow-all-closed='true')
+				each article, i in articles
+					li(class='accordion-item' data-accordion-item)
+						a(href='#article.id' class='accordion-title title')= article.title
+						div(id='article.id' class='accordion-content' data-tab-content)
+							span(class='label')= 'Author: ' + article.author							
+							p= article.body

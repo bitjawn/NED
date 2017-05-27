@@ -24,7 +24,7 @@ router.get('/articles/list', (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
-			res.render('reads/index', {title:cfc('home'), header:cfc('articles'), articles:articles});
+			res.render('reads/index', {title:cfc('articles'), header:cfc('add article'), articles:articles});
 		}
 	});
 })
