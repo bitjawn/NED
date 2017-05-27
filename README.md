@@ -35,6 +35,7 @@
 ```bash
 # Installation
 clone https://github.com/bitjawn/NED.git or download the zip
+
 npm install
 
 # Start app
