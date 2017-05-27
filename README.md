@@ -1,5 +1,6 @@
 # NodeJS Express Demo
 <p>A knowledgebase web application YouTube development course provided by <a href="https://youtu.be/lAUncPg_FVw">Traversy Media</a>.</p>
+<p>The course instructor uses BootStrap front-end but in this project, I chose to use Foundation</p>
 
 <ul>
 	<li>Development Platform & Tools
