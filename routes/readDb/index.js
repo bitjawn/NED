@@ -32,8 +32,7 @@ router.get('/articles/list', (req, res) => {
 // get single article
 router.get('/articles/article/:id', (req, res) => {
 	Article.findById(req.params.id, (err, article) => {
-		console.log(article);
-		return;
+		res.render('reads/article', {article:article,title:article.title});
 	});
 });
 
