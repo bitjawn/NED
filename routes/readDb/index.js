@@ -27,6 +27,11 @@ router.get('/articles/list', (req, res) => {
 			res.render('reads/index', {title:cfc('articles'), header:cfc('add article'), articles:articles});
 		}
 	});
-})
+});
+
+// get single article
+router.get('/articles/article/:identification', (req, res) => {
+
+});
 
 module.exports = router;
