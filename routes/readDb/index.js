@@ -31,7 +31,10 @@ router.get('/articles/list', (req, res) => {
 
 // get single article
 router.get('/articles/article/:identification', (req, res) => {
-
+	Article.findById(req.params.identification, (err, article) => {
+		console.log(article);
+		return;
+	});
 });
 
 module.exports = router;

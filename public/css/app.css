@@ -80,7 +80,8 @@ body {
   color:rgb(245,245,255);
 }
 
-.off-canvas .button {
+.off-canvas .button,
+.close-button {
   background-color: rgb(245,245,255);
   color: rgb(5,5,10);
 }
