@@ -1,5 +1,5 @@
 # NodeJS Express Demo
-<p>A knowledgebase web application, inspired by a YouTube crash-course provided by <a href="https://youtu.be/lAUncPg_FVw">Traversy Media</a>.</p>
+<p>A knowledgebase web application YouTube development course provided by <a href="https://youtu.be/lAUncPg_FVw">Traversy Media</a>.</p>
 
 <ul>
 	<li>Development Platform & Tools
