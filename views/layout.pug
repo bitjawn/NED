@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title #{title}
+		script(src="https://use.fontawesome.com/fc14e58e15.js")
+		link(rel='stylesheet' href='/css/foundation.css')
+		link(rel="stylesheet" href='/css/icons/foundation-icons.css')
+		link(rel='stylesheet' href='/css/app.css')
+	body
+		script(src='/js/vendor/jquery.js')
+		.row
+			block content
+		br
+		hr
+		div(class='row')
+			footer
+				p Copyright &copy; 2017
+		script(src='/js/vendor/what-input.js')
+		script(src='/js/vendor/foundation.js')
+		script(src='/js/resources.js')
+		script(src='/js/app.js')
