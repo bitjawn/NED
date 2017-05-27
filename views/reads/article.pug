@@ -1,6 +1,7 @@
 extends ../layout
 
 block content
-	h1(class='header')= article.title
-	h5(class='label')= 'written by ' + article.author
-	p= article.body
+	div(class='row')
+		h1(class='header')= article.title
+		h5(class='label')= 'written by ' + article.author
+		p= article.body
