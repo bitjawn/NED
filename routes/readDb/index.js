@@ -29,27 +29,4 @@ router.get('/articles/list', (req, res) => {
 	});
 })
 
-// get add article
-router.get('/articles/add', (req, res) => {
-	res.render('add_article', {title:cfc('add article'), header:cfc('Add new article')});
-})
-
-// post add article
-router.post('/articles/add', (req, res) => {
-	let article = new Article();
-	article.title = req.body.title;
-	article.author = req.body.author;
-	article.body = req.body.body;
-
-	article.save((err) => {
-		if(err) {
-			console.log(err);
-			return;
-		} else {
-			res.redirect('/');
-		}
-	});
-
-})
-
 module.exports = router;
