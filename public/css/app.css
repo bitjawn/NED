@@ -110,6 +110,11 @@ input.post-date {
   width:7%;
 }
 
+.location-map {
+  height:50vh;
+  padding:0;
+  margin:0;
+}
 
 div.bottom-row p {
   text-align: center;
