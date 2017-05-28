@@ -11,7 +11,7 @@ block content
 					p= 'Posted: ' + article.postDate
 				if article.url
 					p= 'URL: '
-						a(target='_blank' href=article.url + '?search=' + article.title)= article.title
+						a(target='_blank' href=article.url)= article.title
 			div.card-section
 				p.center-floater.article-body= article.body
 				div.row(style='margin-left:auto;margin-right:auto;')
