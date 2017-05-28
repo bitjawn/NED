@@ -6,7 +6,7 @@ $(document)
       type:'DELETE',
       url: '/write/articles/article/delete/' + $id,
       success: function(response) {
-        alert('Deletting article');
+        console.log('Deletting article');
         window.location.href='/read/articles/list';
       },
       error: function(err) {
