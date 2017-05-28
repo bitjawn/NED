@@ -45,4 +45,27 @@ router.get('/articles/article/edit/:id', (req, res) => {
 	});
 })
 
+// post update article
+router.post('/articles/article/edit/:id', (req, res) => {
+	mongoose.connect('mongodb://_writer:writedeeznuts@localhost/nodekb');
+
+	let article = {};
+	article.title = req.body.title;
+	article.author = req.body.author;
+	article.body = req.body.body;
+	article.url = req.body.url || '';
+	article.postDate = req.body.posted;
+
+	let query = {_id: req.params.id};
+
+	Article.update(query, article, (err) => {
+		if(err) {
+			console.log(err);
+			return;
+		} else {
+			res.redirect('/read/articles/list');
+		}
+	});
+})
+
 module.exports = router;
