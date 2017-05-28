@@ -106,6 +106,9 @@ input.post-date {
   color: rgb(7,7,100);
 }
 
+.cancel-edit {
+  width:7%;
+}
 
 
 div.bottom-row p {

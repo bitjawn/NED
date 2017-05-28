@@ -3,7 +3,7 @@ extends ../layout
 block content
 	div(class='row')
 		h2(class='header') #{header}
-		form(method='POST', actin='/write/articles/article/edit/' + article._id)
+		form(method='POST', action='/write/articles/article/edit/' + article._id)
 			#form-input-group
 				div(class='input-group')
 					span(class='input-group-label')
@@ -33,3 +33,4 @@ block content
 					textarea.input-group-field(name='body' required)= article.body
 					
 			input.button.primary(class='button primary' type='submit', value='Submit')
+			a.button.success.right-floater.cancel-edit(href='#' data-id=article._id)= 'Cancel'

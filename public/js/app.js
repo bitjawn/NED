@@ -14,17 +14,32 @@ $(document)
       }
     });
   });
+
+    $('.cancel-edit').on('click', function(){
+      $id = $(this).data('id');
+      $.ajax({
+        type:'GET',
+        url: '/read/articles/article/' + $id,
+        success: function(response) {
+          window.location.href='/read/articles/article/' + $id;
+        },
+        error: function(err) {
+          console.log(err);
+        }
+      });
+    });
+
     $('#textInput').on('click', function(){
-		addTextInput();
-	});
+  		addTextInput();
+  	});
 
     $('#passwordInput').on('click', function(){
-		addPasswordInput();
-	});
+  		addPasswordInput();
+  	});
 
     $('#emailInput').on('click', function(){
-		addEmailInput();
-	});
+  		addEmailInput();
+  	});
 
     $('.category').on('click', function() {
         var url = '/search/' + $(this).data('category');
