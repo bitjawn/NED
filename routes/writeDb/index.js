@@ -8,7 +8,6 @@ let Article = require('../../models/article');
 
 // post add article
 router.post('/articles/add', (req, res) => {
-	// mongoose.connect('mongodb://_writer:writedeeznuts@localhost/nodekb');
 	mongoose.Promise = global.Promise;
 	var conn = mongoose.createConnection('mongodb://_writer:writedeeznuts@localhost/nodekb'),
   	MyModel = conn.model('Article');
