@@ -4,7 +4,8 @@ block content
 	div(class='row')
 		h1(class='header')= article.title
 		p= 'Written by: ' + article.author
-		p= 'Posted on: ' + article.postDate
+		if article.postDate
+			p= 'Posted on: ' + article.postDate
 		if article.url
 			p= 'URL: ' + article.url
 		p= article.body
