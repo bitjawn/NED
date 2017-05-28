@@ -5,7 +5,6 @@ const strUtils = require('../../modules/strUtils');
 const numUtils = require('../../modules/numUtils');
 const router = express();
 
-
 mongoose.Promise = global.Promise;
 let Article = require('../../models/article');
 
