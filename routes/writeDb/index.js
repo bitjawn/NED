@@ -38,7 +38,7 @@ router.post('/articles/add', (req, res) => {
 	});
 })
 
-// get load edit article
+// get update article
 router.get('/articles/article/edit/:id', (req, res) => {
 	Article.findById(req.params.id, (err, article) => {
 		res.render('writes/edit_article', {article:article, header: cfc('editing ' + article.title), title:article.title});
