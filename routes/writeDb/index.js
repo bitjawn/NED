@@ -10,7 +10,7 @@ let Article = require('../../models/article');
 router.post('/articles/add', (req, res) => {
 	mongoose.Promise = global.Promise;
 	var conn = mongoose.createConnection('mongodb://_writer:writedeeznuts@localhost/nodekb'),
-  	MyModel = conn.model('Article');
+  	Article = conn.model('Article');
 
 	let date = new Date(),
 		year = date.getUTCFullYear(),
@@ -21,7 +21,8 @@ router.post('/articles/add', (req, res) => {
 		second = date.getSeconds() + 1,
 		datestamp = month.toString() + '/' + day.toString() + '/' + year,
 		timestamp = hour + ':' + minute + ':' + second;
-	let article = new MyModel();
+		
+	let article = new Article();
 	article.title = req.body.title;
 	article.author = req.body.author;
 	article.body = req.body.body;
