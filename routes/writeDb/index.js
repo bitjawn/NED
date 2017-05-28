@@ -5,11 +5,12 @@ const strUtils = require('../../modules/strUtils');
 const numUtils = require('../../modules/numUtils');
 const router = express();
 
+
+mongoose.Promise = global.Promise;
 let Article = require('../../models/article');
 
 // post add article
 router.post('/articles/add', (req, res) => {
-	mongoose.Promise = global.Promise;
 	var conn = mongoose.createConnection('mongodb://_writer:writedeeznuts@localhost/nodekb'),
   	Article = conn.model('Article');
 
@@ -50,8 +51,6 @@ router.get('/articles/article/edit/:id', (req, res) => {
 
 // post update article
 router.post('/articles/article/edit/:id', (req, res) => {
-	mongoose.connect('mongodb://_writer:writedeeznuts@localhost/nodekb');
-
 	let article = {};
 	article.title = req.body.title;
 	article.author = req.body.author;
