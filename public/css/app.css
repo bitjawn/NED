@@ -94,6 +94,11 @@ body {
   text-align: left;
 }
 
+.card-divider p {
+  margin:0;
+  padding:0;
+}
+
 iframe {
     width: 100%;
     height: 50vh;
