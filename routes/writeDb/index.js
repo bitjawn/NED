@@ -36,7 +36,13 @@ router.post('/articles/add', (req, res) => {
 			res.redirect('/read/articles/list');
 		}
 	});
+})
 
+// get load edit article
+router.get('/articles/article/edit/:id', (req, res) => {
+	Article.findById(req.params.id, (err, article) => {
+		res.render('writes/edit_article', {article:article, header: cfc('editing ' + article.title), title:article.title});
+	});
 })
 
 module.exports = router;

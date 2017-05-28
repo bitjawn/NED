@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+	div(class='row')
+		h2(class='header') #{header}
+		form(method='POST', actin='/write/articles/article/edit/' + article._id)
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-header')
+					input.input-group-field(name='title', type='text' value=article.title required)
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-user')
+					input.input-group-field(name='author', type='text' value=article.author required)
+			if article.url
+				#form-input-group
+					div(class='input-group')
+						span(class='input-group-label')
+							i(class='fa fa-globe')
+						input.input-group-field(name='url', type='text' value=article.url)
+			if article.postDate
+				#form-input-group
+					div(class='input-group')
+						span(class='input-group-label')
+							i(class='fa fa-calendar-o')
+						input.input-group-field.post-date(name='posted', type='text' value=article.postDate readOnly)
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-edit')
+					textarea.input-group-field(name='body' required)= article.body
+					
+			input.button.primary(class='button primary' type='submit', value='Submit')

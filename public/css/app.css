@@ -101,6 +101,11 @@ body {
   color: rgb(7,7,100);
 }
 
+input.post-date {
+  background-color: rgb(255,255,255);
+  color: rgb(7,7,100);
+}
+
 
 
 div.bottom-row p {
