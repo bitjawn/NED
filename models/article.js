@@ -18,6 +18,10 @@ let articleSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	postTime: {
+		type: String,
+		required: false
+	},
 	url: {
 		type:String,
 		required: false

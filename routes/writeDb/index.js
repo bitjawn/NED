@@ -14,14 +14,16 @@ router.post('/articles/add', (req, res) => {
 		day = date.getDate(),
 		hour = date.getUTCHours() + 1,
 		minute = date.getUTCMinutes() + 1,
-		seconds = date.getUTCSeconds() + 1,
-		timestamp = month.toString() + '/' + day.toString() + '/' + year;
+		second = date.getUTCSeconds() + 1,
+		datetamp = month.toString() + '/' + day.toString() + '/' + year,
+		timestamp = hour + ':' + minute + ':' + second;
 	let article = new Article();
 	article.title = req.body.title;
 	article.author = req.body.author;
 	article.body = req.body.body;
 	article.url = req.body.url || '';
-	article.postDate = timestamp;
+	article.postDate = datestamp;
+	article.postTime = timestamp;
 
 	article.save((err) => {
 		if(err) {
