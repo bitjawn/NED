@@ -2,17 +2,19 @@ $(document)
 .ready(function(){
   $('.delete-article').on('click', function(){
     $id = $(this).data('id');
-    $.ajax({
-      type:'DELETE',
-      url: '/write/articles/article/delete/' + $id,
-      success: function(response) {
-        console.log('Deleting article');
-        window.location.href='/read/articles/list';
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
+    if (confirm('Are you sure you want to delete this article?')) {
+      $.ajax({
+        type:'DELETE',
+        url: '/write/articles/article/delete/' + $id,
+        success: function(response) {
+          console.log('Deleting article');
+          window.location.href='/read/articles/list';
+        },
+        error: function(err) {
+          console.log(err);
+        }
+      });
+    }
   });
 
     $('.cancel-edit').on('click', function(){
