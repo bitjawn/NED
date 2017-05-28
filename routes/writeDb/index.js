@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cfc = require('../../modules/cfc');
 const strUtils = require('../../modules/strUtils');
+const numUtils = require('../../modules/numUtils');
 const router = express();
 
 let Article = require('../../models/article');
@@ -16,12 +17,12 @@ router.post('/articles/add', (req, res) => {
 		year = date.getUTCFullYear(),
 		month = date.getUTCMonth() + 1,
 		day = date.getDate(),
-		hour = date.getHours() + 1,
-		minute = date.getMinutes() + 1,
-		second = date.getSeconds() + 1,
+		hour = date.getHours(),
+		minute = numUtils.formatMinute(date.getMinutes()),
+		second = numUtils.formatMinute(date.getSeconds()),
 		datestamp = month.toString() + '/' + day.toString() + '/' + year,
 		timestamp = hour + ':' + minute + ':' + second;
-		
+
 	let article = new Article();
 	article.title = req.body.title;
 	article.author = req.body.author;
