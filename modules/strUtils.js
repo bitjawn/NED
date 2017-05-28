@@ -5,12 +5,6 @@ module.exports = {
             return pattern.test(w);
         }
     })(),
-    'hasHTTP':(function(){
-        return function(w) {
-            const pattern = /^(https?:\/\/).*?/;
-            return pattern.test(w);
-        }
-    })(),
     'icontains':(function(){
         return function(p,w) {
             const pattern = new RegExp(p, 'i');
@@ -27,6 +21,12 @@ module.exports = {
         return function(p,w) {
             const pattern = new RegExp(p,'i');
             return pattern.toString();
+        }
+    })(),
+    'hasHTTP':(function(){
+        return function(w) {
+            const pattern = /^(https?:\/\/).*?/;
+            return pattern.test(w);
         }
     })()
 }
