@@ -38,7 +38,7 @@ router.post('/articles/add', (req, res) => {
 	article.title = req.body.title;
 	article.author = req.body.author;
 	article.body = req.body.body;
-	article.url = req.body.url;
+	article.url = req.body.url || '';
 	article.postDate = timestamp;
 
 	article.save((err) => {
