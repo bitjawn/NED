@@ -3,5 +3,7 @@ extends ../layout
 block content
 	div(class='row')
 		h1(class='header')= article.title
-		h5(class='label')= 'written by ' + article.author
+		p= 'written by ' + article.author
+		p= 'posted on ' + article.postDate
+		p= article.url
 		p= article.body
