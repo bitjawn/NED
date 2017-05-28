@@ -47,6 +47,7 @@ body {
 
 .footer {
   color: rgb(7,7,100);
+  text-align: center;
 }
 
 .menu-header {
@@ -98,6 +99,12 @@ body {
   margin:0;
   padding:0;
   color: rgb(7,7,100);
+}
+
+
+
+div.row p {
+  text-align: center;
 }
 
 iframe {
