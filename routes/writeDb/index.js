@@ -5,11 +5,6 @@ const router = express();
 
 let Article = require('../../models/article');
 
-// get add article
-router.get('/articles/add', (req, res) => {
-	res.render('add_article', {title:cfc('add article'), header:cfc('Add new article')});
-})
-
 // post add article
 router.post('/articles/add', (req, res) => {
 	mongoose.connect('mongodb://_writer:writedeeznuts@localhost/nodekb');
