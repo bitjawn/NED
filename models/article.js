@@ -32,4 +32,8 @@ articleSchema.statics.findByTitle = function findByTitle(keyword, cb) {
 	return this.where('title', new RegExp(keyword.trim(), 'i')).exec(cb);
 };
 
+articleSchema.statics.findByAuthor = function findByTitle(keyword, cb) {
+	return this.where('author', new RegExp(keyword.trim(), 'i')).exec(cb);
+};
+
 let Article = module.exports = mongoose.model('Article', articleSchema);

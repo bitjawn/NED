@@ -2,21 +2,42 @@ extends ../layout
 
 block content
 	div(class='row' style='margin-top:10px;')
-		div.card(style='width=50%;')
-			div.card-divider
-				h1(class='header')= article.title
-			div.card-divider
-				p= 'Author: ' + article.author
-				if article.postDate
-					if article.postTime
-						p= 'Posted: ' + article.postDate + ' ' + article.postTime
-					else
-						p= 'Posted: ' + article.postDate
-				if article.url
-					p= 'URL: '
-						a(target='_blank' href=article.url)= article.title
-			div.card-section
-				p.center-floater.article-body= article.body
-				div.row(style='margin-left:auto;margin-right:auto;')
-					a.button.primary.left-floater(style='width:7%;margin:10px;' href="/write/articles/article/edit/" + article.id) Edit
-					a.button.alert.right-floater.delete-article(style='width:7%;margin:10px;' href="#" + article.id data-id=article._id) Delete
+		if (articles)
+			each article in articles
+				div.card(style='width=50%;')
+					div.card-divider
+						h1(class='header')= article.title
+					div.card-divider
+						p= 'Author: ' + article.author
+						if article.postDate
+							if article.postTime
+								p= 'Posted: ' + article.postDate + ' ' + article.postTime
+							else
+								p= 'Posted: ' + article.postDate
+						if article.url
+							p= 'URL: '
+								a(target='_blank' href=article.url)= article.title
+					div.card-section
+						p.center-floater.article-body= article.body
+						div.row(style='margin-left:auto;margin-right:auto;')
+							a.button.primary.left-floater(style='width:7%;margin:10px;' href="/write/articles/article/edit/" + article.id) Edit
+							a.button.alert.right-floater.delete-article(style='width:7%;margin:10px;' href="#" + article.id data-id=article._id) Delete
+		else
+			div.card(style='width=50%;')
+				div.card-divider
+					h1(class='header')= article.title
+				div.card-divider
+					p= 'Author: ' + article.author
+					if article.postDate
+						if article.postTime
+							p= 'Posted: ' + article.postDate + ' ' + article.postTime
+						else
+							p= 'Posted: ' + article.postDate
+					if article.url
+						p= 'URL: '
+							a(target='_blank' href=article.url)= article.title
+				div.card-section
+					p.center-floater.article-body= article.body
+					div.row(style='margin-left:auto;margin-right:auto;')
+						a.button.primary.left-floater(style='width:7%;margin:10px;' href="/write/articles/article/edit/" + article.id) Edit
+						a.button.alert.right-floater.delete-article(style='width:7%;margin:10px;' href="#" + article.id data-id=article._id) Delete
