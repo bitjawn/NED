@@ -19,7 +19,7 @@ router.post('/articles/add', (req, res) => {
 		day = date.getDate(),
 		hour = date.getHours(),
 		minute = numUtils.formatMinute(date.getMinutes()),
-		second = numUtils.formatMinute(date.getSeconds()),
+		second = numUtils.formatSecond(date.getSeconds()),
 		datestamp = month.toString() + '/' + day.toString() + '/' + year,
 		timestamp = hour + ':' + minute + ':' + second;
 

@@ -14,5 +14,10 @@ module.exports = {
 		return function(n) {
 			return formatNumber(n);
 		}
+	})(),
+	formatSecond: (function(){
+		return function(n) {
+			return formatNumber(n);
+		}
 	})()
 };
