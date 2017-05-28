@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cfc = require('../../modules/cfc');
+const strUtils = require('../../modules/strUtils');
 const router = express();
 
 let Article = require('../../models/article');
@@ -21,7 +22,7 @@ router.post('/articles/add', (req, res) => {
 	article.title = req.body.title;
 	article.author = req.body.author;
 	article.body = req.body.body;
-	article.url = req.body.url || '';
+	article.url = (req.body.url)? (strUtils.hasHTTP(req.body.url)? req.body.url:'http://' + req.body.url): '';
 	article.postDate = datestamp;
 	article.postTime = timestamp;
 
