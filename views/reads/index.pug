@@ -7,11 +7,12 @@ block content
 		div(class='right-floater')
 			form(class='search-form' method='POST', action='/read/articles/search')
 				#form-input-group
-					div(class='input-group')
+					div.input-group
 						span(class='input-group-label')
 							i(class='fa fa-search')
 						input.input-group-field(name='search', type='text' placeholder='Search' required)
-		
+					div.input-group
+						input.button.primary.input-group-field(style="margin:0;" type='submit', value='Submit' required)
 	div(class='off-canvas-wrapper')
 		div(class='off-canvas position-right' id='offCanvas' data-off-canvas)
 			div(class='row new-article')

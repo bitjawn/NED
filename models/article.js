@@ -28,4 +28,8 @@ let articleSchema = mongoose.Schema({
 	}
 });
 
+articleSchema.statics.findByTitle = function findByTitle(keyword, cb) {
+	return this.where('title', new RegExp(keyword.trim(), 'i')).exec(cb);
+};
+
 let Article = module.exports = mongoose.model('Article', articleSchema);

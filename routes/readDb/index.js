@@ -36,4 +36,22 @@ router.get('/articles/article/:id', (req, res) => {
 	});
 });
 
+// get single article
+router.post('/articles/search', (req, res) => {
+	Article.findByTitle(req.body.search, (err, article) => {
+		// res.render('reads/article', {article:article,title:article.title});
+		if (err) {
+			console.log(err);
+		} else {
+			// console.log(article);
+			if (article.length) {
+				res.render('reads/article', {article:article[0],title:article.title});
+			} else {
+				res.redirect('/read/articles/list');
+			}
+		}
+		return;
+	});
+});
+
 module.exports = router;
