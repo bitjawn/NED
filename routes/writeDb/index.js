@@ -10,8 +10,8 @@ let Article = require('../../models/article');
 
 // post add article
 router.post('/articles/add', (req, res) => {
-	var conn = mongoose.createConnection('mongodb://_writer:writedeeznuts@localhost/nodekb'),
-  	Article = conn.model('Article');
+	let conn = mongoose.createConnection('mongodb://_writer:writedeeznuts@localhost/nodekb');
+	let = Article = conn.model('Article');
 
 	let date = new Date(),
 		year = date.getUTCFullYear(),
