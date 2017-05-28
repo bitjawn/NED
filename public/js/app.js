@@ -1,18 +1,31 @@
 $(document)
 .ready(function(){
-    
+  $('.delete-article').on('click', function(){
+    $id = $(this).data('id');
+    $.ajax({
+      type:'DELETE',
+      url: '/write/articles/article/delete/' + $id,
+      success: function(response) {
+        alert('Deletting article');
+        window.location.href='/read/articles/list';
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
+  });
     $('#textInput').on('click', function(){
 		addTextInput();
 	});
-    
+
     $('#passwordInput').on('click', function(){
 		addPasswordInput();
 	});
-   
+
     $('#emailInput').on('click', function(){
 		addEmailInput();
 	});
-    
+
     $('.category').on('click', function() {
         var url = '/search/' + $(this).data('category');
         $.ajax({
@@ -22,7 +35,7 @@ $(document)
             error:function(err){console.log(err);}
         });
     });
-    
+
     $('.remove-item').on('click', function(){
         var id = $(this).data('id');
         var rev = $(this).data('rev');
@@ -52,16 +65,16 @@ function addTextInput() {
 
 	var count = childCount(element('reg-form')) + 1,
         name = 'input' + count;
-        
+
     if (confirm('Do you want to name the input?')) {
         var newName = prompt('Enter input name');
         if (newName.length) {
             name = newName;
         }
     }
-    
+
     /*
-    
+
         <div class="input-group" >
             <span class="input-group-label"><i class="fi-pencil"></i></span>
             <input class="input-group-field" type="text" placeholder="Name">
@@ -71,22 +84,22 @@ function addTextInput() {
 	addAttribute('class', 'input-group', divParent);
 	addAttribute('class', 'input-group-label', span);
     addAttribute('class', 'fi-pencil', italic);
-    
+
     addAttribute('class', 'input-group-field', input);
 	addAttribute('placeholder', cfc(name), input);
     addAttribute('type', 'text', input);
     addAttribute('id', name, input);
-    
+
 	addAttribute('class', 'input-group-label', remove);
     addAttribute('class', 'fi-x', italicRemove);
-    
+
 	addAttribute('name', name, input);
 
 	addHandler(remove, 'click', function() {
 		element('reg-form').removeChild(divParent);
 	});
-    
-    $(italic).appendTo(span);    
+
+    $(italic).appendTo(span);
     $(italicRemove).appendTo(remove);
     $(span).appendTo(divParent);
     $(input).appendTo(divParent);
@@ -104,16 +117,16 @@ function addPasswordInput() {
 
 	var count = childCount(element('reg-form')) + 1,
         name = 'input' + count;
-        
+
     if (confirm('Do you want to name the input?')) {
         var newName = prompt('Enter input name');
         if (newName.length) {
             name = newName;
         }
     }
-    
+
     /*
-    
+
         <div class="input-group" >
             <span class="input-group-label"><i class="fi-pencil"></i></span>
             <input class="input-group-field" type="text" placeholder="Name">
@@ -123,22 +136,22 @@ function addPasswordInput() {
 	addAttribute('class', 'input-group', divParent);
 	addAttribute('class', 'input-group-label', span);
     addAttribute('class', 'fi-lock', italic);
-    
+
     addAttribute('class', 'input-group-field', input);
 	addAttribute('placeholder', cfc(name), input);
     addAttribute('type', 'password', input);
     addAttribute('id', name, input);
-    
+
 	addAttribute('class', 'input-group-label', remove);
     addAttribute('class', 'fi-x', italicRemove);
-    
+
 	addAttribute('name', name, input);
 
 	addHandler(remove, 'click', function() {
 		element('reg-form').removeChild(divParent);
 	});
-    
-    $(italic).appendTo(span);    
+
+    $(italic).appendTo(span);
     $(italicRemove).appendTo(remove);
     $(span).appendTo(divParent);
     $(input).appendTo(divParent);
@@ -156,16 +169,16 @@ function addEmailInput() {
 
 	var count = childCount(element('reg-form')) + 1,
         name = 'input' + count;
-        
+
     if (confirm('Do you want to name the input?')) {
         var newName = prompt('Enter input name');
         if (newName.length) {
             name = newName;
         }
     }
-    
+
     /*
-    
+
         <div class="input-group" >
             <span class="input-group-label"><i class="fi-pencil"></i></span>
             <input class="input-group-field" type="text" placeholder="Name">
@@ -175,27 +188,25 @@ function addEmailInput() {
 	addAttribute('class', 'input-group', divParent);
 	addAttribute('class', 'input-group-label', span);
     addAttribute('class', 'fi-mail', italic);
-    
+
     addAttribute('class', 'input-group-field', input);
 	addAttribute('placeholder', cfc(name), input);
     addAttribute('type', 'email', input);
     addAttribute('id', name, input);
-    
+
 	addAttribute('class', 'input-group-label', remove);
     addAttribute('class', 'fi-x', italicRemove);
-    
+
 	addAttribute('name', name, input);
 
 	addHandler(remove, 'click', function() {
 		element('reg-form').removeChild(divParent);
 	});
-    
-    $(italic).appendTo(span);    
+
+    $(italic).appendTo(span);
     $(italicRemove).appendTo(remove);
     $(span).appendTo(divParent);
     $(input).appendTo(divParent);
     $(remove).appendTo(divParent);
 	$(divParent).appendTo('.registration-form');
 }
-
-

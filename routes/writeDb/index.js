@@ -66,6 +66,19 @@ router.post('/articles/article/edit/:id', (req, res) => {
 			res.redirect('/read/articles/list');
 		}
 	});
-})
+});
+
+// delete remove article
+router.delete('/articles/article/delete/:id', (req, res) => {
+	let query = {_id: req.params.id};
+
+	Article.remove(query, (err) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send('success');
+		}
+	});
+});
 
 module.exports = router;

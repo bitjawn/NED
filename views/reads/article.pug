@@ -15,4 +15,4 @@ block content
 				p.center-floater.article-body= article.body
 				div.row(style='margin-left:auto;margin-right:auto;')
 					a.button.primary.left-floater(style='width:7%;margin:10px;' href="/write/articles/article/edit/" + article.id) Edit
-					a.button.alert.right-floater(style='width:7%;margin:10px;' href="/write/articles/article/delete/" + article.id) Delete
+					a.button.alert.right-floater.delete-article(style='width:7%;margin:10px;' href="#" + article.id data-id=article._id) Delete
