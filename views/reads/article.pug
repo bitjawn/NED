@@ -3,7 +3,9 @@ extends ../layout
 block content
 	div(class='row')
 		h1(class='header')= article.title
-		p= 'written by ' + article.author
-		p= 'posted on ' + article.postDate
-		p= article.url
+		p= 'written by: ' + article.author
+		if article.postDate
+			p= 'posted on: ' + article.postDate
+		if article.url
+			p= 'URL: ' + article.url
 		p= article.body
