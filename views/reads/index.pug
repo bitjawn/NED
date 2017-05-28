@@ -42,11 +42,9 @@ block content
 					input.button.primary(class='button primary' type='submit', value='Submit' required)
 								
 		button(class='close-button' aria-label='Close menu' type='button' data-close)
-			//- span(aria-hidden='true')				
 		div(class='off-canvas-content' data-off-canvas-content)
 			
 	div(class='row articles')
-		//- a(href='#' class='button primary' data-toggle='offCanvas') #{header}
 		div(class='v-scroll list')
 			ul(class='accordion' data-accordion data-allow-all-closed='true')
 				each article, i in articles
