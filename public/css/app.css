@@ -76,8 +76,8 @@ body {
   background: transparent;
 }
 
-.search-article form input {
-  color:white;
+.search-article form input[type="text"] {
+  color:black;
 }
 
 .off-canvas,
