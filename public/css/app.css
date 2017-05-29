@@ -69,10 +69,15 @@ body {
   margin:10px;
 }
 
-.new-article form {
+.new-article form,
+.search-article form {
   margin:15px;
   padding:10px;
   background: transparent;
+}
+
+.search-article form input {
+  color:white;
 }
 
 .off-canvas,

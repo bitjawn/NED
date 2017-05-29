@@ -47,22 +47,26 @@ block content
 			
 	div(class='off-canvas-wrapper')
 		div(class='off-canvas position-left' id='searchCanvas' data-off-canvas)
-			div(class='row new-article')
+			div(class='row search-article')
 				h4(class='header')= 'New Article'
-				form(method='POST', action='/write/articles/add')
+				form(method='POST', action='/read/articles/search')
 					#form-input-group
 						div.input-group
 							span(class='input-group-label')
 								i(class='fa fa-search')
 							input.input-group-field(name='search', type='text' placeholder='Search' required)
-						div.input-group
-							input.button.primary.input-group-field(style="margin:0;" type='submit', value='Submit' required)
 												
 					#form-input-group
 						div(class='input-group')
-							span(class='input-group-label')
-								i(class='fa fa-edit')
-							textarea.input-group-field(name='body' placeholder='Body')
+							fieldset.fieldset
+								legend(style='color:black;') Choose search type
+								input(id='title', name='title', type='radio' checked)
+								label(for='title' style='color:white;')= 'Search by title'
+								br
+								input(id='author', name='author', type='radio' selected)
+								label(for='author' style='color:white;')= 'Search by author'
+									
+								//- input(name='author', type='radio')= 'Search by author'
 							
 					input.button.primary(class='button primary' type='submit', value='Submit' required)
 								
