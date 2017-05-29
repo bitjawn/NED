@@ -18,7 +18,7 @@ db.on('error', (err) => {
 
 let Article = require('../../models/article');
 
-// articles list
+// get articles list
 router.get('/articles/list', (req, res) => {
 	Article.find({}, (err, articles) => {
 		if (err) {
@@ -36,7 +36,7 @@ router.get('/articles/article/:id', (req, res) => {
 	});
 });
 
-// get single article
+// get search articles
 router.post('/articles/search', (req, res) => {
 	let search = req.body.search,
 		type = req.body.type;
