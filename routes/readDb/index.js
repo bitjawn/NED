@@ -40,16 +40,12 @@ router.get('/articles/article/:id', (req, res) => {
 router.post('/articles/search', (req, res) => {
 	let search = req.body.search,
 		type = req.body.type;
-
-	// console.log('Search Type: ' + type);
 	switch (type) {
 		case 'title':
-			Article.findByTitle(req.body.search, (err, article) => {
-				// res.render('reads/article', {article:article,title:article.title});
+			Article.findByTitle(search, (err, article) => {
 				if (err) {
 					console.log(err);
 				} else {
-					// console.log(article);
 					if (article.length) {
 						res.render('reads/article', {articles:article,title:article.title});
 					} else {
@@ -61,12 +57,10 @@ router.post('/articles/search', (req, res) => {
 			break;
 
 		case 'author':
-			Article.findByAuthor(req.body.search, (err, article) => {
-				// res.render('reads/article', {article:article,title:article.title});
+			Article.findByAuthor(search, (err, article) => {
 				if (err) {
 					console.log(err);
 				} else {
-					// console.log(article);
 					if (article.length) {
 						res.render('reads/article', {articles:article,title:article.title});
 					} else {
