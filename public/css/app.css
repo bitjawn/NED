@@ -127,6 +127,10 @@ input.post-date {
     margin:10px;
 }
 
+.article-view {
+  height:75vh;
+}
+
 div.bottom-row p {
   text-align: center;
 }
