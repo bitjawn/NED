@@ -47,7 +47,7 @@ router.post('/articles/search', (req, res) => {
 					console.log(err);
 				} else {
 					if (article.length) {
-						res.render('reads/article', {articles:article,title:article.title});
+						res.render('reads/article', {articles:article,title:search});
 					} else {
 						res.redirect('/read/articles/list');
 					}
@@ -62,7 +62,7 @@ router.post('/articles/search', (req, res) => {
 					console.log(err);
 				} else {
 					if (article.length) {
-						res.render('reads/article', {articles:article,title:article.title});
+						res.render('reads/article', {articles:article,title:search});
 					} else {
 						res.redirect('/read/articles/list');
 					}
