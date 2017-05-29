@@ -38,20 +38,45 @@ router.get('/articles/article/:id', (req, res) => {
 
 // get single article
 router.post('/articles/search', (req, res) => {
-	Article.findByTitle(req.body.search, (err, article) => {
-		// res.render('reads/article', {article:article,title:article.title});
-		if (err) {
-			console.log(err);
-		} else {
-			// console.log(article);
-			if (article.length) {
-				res.render('reads/article', {articles:article,title:article.title});
-			} else {
-				res.redirect('/read/articles/list');
-			}
-		}
-		return;
-	});
+	let search = req.body.search,
+		type = req.body.type;
+
+	// console.log('Search Type: ' + type);
+	switch (type) {
+		case 'title':
+			Article.findByTitle(req.body.search, (err, article) => {
+				// res.render('reads/article', {article:article,title:article.title});
+				if (err) {
+					console.log(err);
+				} else {
+					// console.log(article);
+					if (article.length) {
+						res.render('reads/article', {articles:article,title:article.title});
+					} else {
+						res.redirect('/read/articles/list');
+					}
+				}
+				return;
+			});
+			break;
+
+		case 'author':
+			Article.findByAuthor(req.body.search, (err, article) => {
+				// res.render('reads/article', {article:article,title:article.title});
+				if (err) {
+					console.log(err);
+				} else {
+					// console.log(article);
+					if (article.length) {
+						res.render('reads/article', {articles:article,title:article.title});
+					} else {
+						res.redirect('/read/articles/list');
+					}
+				}
+				return;
+			});
+			break;
+	}
 });
 
 module.exports = router;
