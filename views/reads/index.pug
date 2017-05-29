@@ -4,14 +4,6 @@ block content
 	div(class='row top')
 		a.left-floater.add-button(href='#' class='button primary' data-toggle='offCanvas') #{header}
 		a.right-floater.search-button(href='#' class='button primary' data-toggle='searchCanvas') Search
-			//- form(class='search-form' method='POST', action='/read/articles/search')
-			//- 	#form-input-group
-			//- 		div.input-group
-			//- 			span(class='input-group-label')
-			//- 				i(class='fa fa-search')
-			//- 			input.input-group-field(name='search', type='text' placeholder='Search' required)
-			//- 		div.input-group
-			//- 			input.button.primary.input-group-field(style="margin:0;" type='submit', value='Submit' required)
 							
 	div(class='off-canvas-wrapper')
 		div(class='off-canvas position-right' id='offCanvas' data-off-canvas)
@@ -48,7 +40,7 @@ block content
 	div(class='off-canvas-wrapper')
 		div(class='off-canvas position-left' id='searchCanvas' data-off-canvas)
 			div(class='row search-article')
-				h4(class='header')= 'New Article'
+				h4(class='header')= 'Search Articles'
 				form(method='POST', action='/read/articles/search')
 					#form-input-group
 						div.input-group
@@ -56,15 +48,14 @@ block content
 								i(class='fa fa-search')
 							input.input-group-field(name='search', type='text' placeholder='Search' required)
 												
-					#form-input-group
-						div(class='input-group')
-							fieldset.fieldset
-								legend(style='color:black;') Choose search type
-								input(id='title', name='title', type='radio' checked)
-								label(for='title' style='color:white;')= 'Search by title'
-								br
-								input(id='author', name='author', type='radio' selected)
-								label(for='author' style='color:white;')= 'Search by author'
+					
+				
+					fieldset.fieldset
+						legend(style='color:black;') Choose search type
+						input(value='title', name='type', type='radio' checked)
+						label(for='title' style='color:white;')= 'Search by title'						
+						input(value='author', name='type', type='radio')
+						label(for='author' style='color:white;')= 'Search by author'
 									
 								//- input(name='author', type='radio')= 'Search by author'
 							
