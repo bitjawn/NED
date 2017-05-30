@@ -3,7 +3,8 @@ $(document)
   // $('#callout').hide(5500,function(){setTimeout(function(){$('#callout').remove();},5500);});
 
   $('#callout').on('click',function() {
-      $(this).remove();
+      // $(this).remove();
+      $(this).fadeOut(500,function(){$(this).remove();})
   });
 
   $('.delete-article').on('click', function(){
