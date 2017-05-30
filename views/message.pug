@@ -1,0 +1,7 @@
+.messages
+	each type in Object.keys(messages)
+		each message in messages[type]
+			div(id='callout' class=type + " callout" data-closable="slide-out-right")
+				h5= 'Success'
+				p #{message}
+				button(class="close-button" aria-label="Dismiss alert" type="button" data-close)

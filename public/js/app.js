@@ -1,5 +1,7 @@
 $(document)
 .ready(function(){
+  $('#callout').hide(5500,function(){setTimeout(function(){$('#callout').remove();},5500);})
+
   $('.delete-article').on('click', function(){
     $id = $(this).data('id');
     if (confirm('Are you sure you want to delete this article?')) {

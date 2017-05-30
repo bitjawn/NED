@@ -131,6 +131,11 @@ input.post-date {
   height:75vh;
 }
 
+.callout {
+  margin:10px;
+  padding:10px;
+}
+
 div.bottom-row p {
   text-align: center;
 }

@@ -36,6 +36,7 @@ router.post('/articles/add', (req, res) => {
 			console.log(err);
 			return;
 		} else {
+			req.flash('success', 'Article ' + req.body.title + ' added')
 			res.redirect('/read/articles/list');
 		}
 	});
