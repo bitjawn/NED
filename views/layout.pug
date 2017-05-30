@@ -38,7 +38,15 @@ html
 								a(href='#')= "Authors"
 		
 		.row
-			!= messages('message', locals)
+			!= messages('message', locals)					
+			if errors
+				each error, i in errors
+					div(id='callout' class="alert callout" data-closable="slide-out-left")
+						h5 Error
+						p #{error.msg}
+						button(class="close-button" aria-label="Dismiss alert" type="button" data-close)
+							span(aria-hidden='true')
+								i(class='fa fa-times')
 			block content
 		
 		div.row.bottom-row

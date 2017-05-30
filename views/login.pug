@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	div(class='row' style='margin:25px; padding: 10px;')
+		h2(class='header') #{header}
+		form(method='POST', action='/users/login')
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-user')
+					input.input-group-field(name='alias', type='text', placeholder='Username', required)
+
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-lock')
+					input.input-group-field(name='password', type='password', placeholder='Password', required)
+					
+			input.button.primary(class='button primary', type='submit', value='Submit' required)
