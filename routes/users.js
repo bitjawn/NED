@@ -50,7 +50,7 @@ router.post('/register', (req, res) => {
 						return;
 					} else {
 						req.flash('success', 'You can now login');
-						res.redirect('/user/login', {title:cfc('login')});
+						res.redirect('/users/login');
 					}
 				});
 			});
