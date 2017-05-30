@@ -65,6 +65,7 @@ router.post('/articles/article/edit/:id', (req, res) => {
 			console.log(err);
 			return;
 		} else {
+			req.flash('success', article.title + ' updated');
 			res.redirect('/read/articles/list');
 		}
 	});
