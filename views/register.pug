@@ -1,0 +1,36 @@
+extends layout
+
+block content
+	div(class='row' style='margin:25px; padding: 10px;')
+		h2(class='header') #{header}
+		form(method='POST', action='/users/register')
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-user-o')
+					input.input-group-field(name='name', type='text', placeholder='Name', required)
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-envelope')
+					input.input-group-field(name='email', type='email', placeholder='Email', required)
+				
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-user')
+					input.input-group-field(name='alias', type='text', placeholder='Username', required)
+
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-lock')
+					input.input-group-field(name='password', type='password', placeholder='Password', required)
+				
+			#form-input-group
+				div(class='input-group')
+					span(class='input-group-label')
+						i(class='fa fa-lock')
+					input.input-group-field(name='password2', type='password', placeholder='Confirm password', required)
+					
+			input.button.primary(class='button primary', type='submit', value='Submit' required)
