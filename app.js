@@ -4,6 +4,12 @@ const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
 
+// routes
+const readDb = require('./routes/readDb/index');
+const writeDb = require('./routes/writeDb/index');
+const users = require('./routes/users');
+const index = require('./routes/index');
+
 // application
 const app = express();
 const path = require('path');
@@ -50,12 +56,6 @@ app.use(expressValidator({
     };
   }
 }));
-
-// routes
-const readDb = require('./routes/readDb/index');
-const writeDb = require('./routes/writeDb/index');
-const users = require('./routes/users');
-const index = require('./routes/index');
 
 // set router
 app.use('/read', readDb);

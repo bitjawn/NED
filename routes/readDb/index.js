@@ -4,7 +4,7 @@ const cfc = require('../../modules/cfc');
 const router = express();
 const config = require('../../config/database');
 
-mongoose.connect(config.database.read);
+mongoose.connect(config.database);
 let db = mongoose.connection;
 
 // check connection

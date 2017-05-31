@@ -11,7 +11,7 @@ let Article = require('../../models/article');
 
 // post add article
 router.post('/articles/add', (req, res) => {
-	let conn = mongoose.createConnection(config.database.write);
+	let conn = mongoose.createConnection(config.database);
 	let = Article = conn.model('Article');
 
 	let date = new Date(),
