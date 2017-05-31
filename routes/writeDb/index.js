@@ -4,13 +4,14 @@ const cfc = require('../../modules/cfc');
 const strUtils = require('../../modules/strUtils');
 const numUtils = require('../../modules/numUtils');
 const router = express();
+const config = require('../../config/database');
 
 mongoose.Promise = global.Promise;
 let Article = require('../../models/article');
 
 // post add article
 router.post('/articles/add', (req, res) => {
-	let conn = mongoose.createConnection('mongodb://_writer:writedeeznuts@localhost/nodekb');
+	let conn = mongoose.createConnection(config.database.write);
 	let = Article = conn.model('Article');
 
 	let date = new Date(),

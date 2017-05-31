@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cfc = require('../../modules/cfc');
 const router = express();
+const config = require('../../config/database');
 
-mongoose.connect('mongodb://_reader:readdeeznuts@localhost/nodekb');
+mongoose.connect(config.database.read);
 let db = mongoose.connection;
 
 // check connection
