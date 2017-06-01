@@ -62,14 +62,15 @@ block content
 		button(class='close-button' aria-label='Close menu' type='button' data-close)
 		div(class='off-canvas-content' data-off-canvas-content)
 			
-	div(class='row articles')
-		div(class='v-scroll list')
-			ul(class='accordion' data-accordion data-allow-all-closed='true')
-				each article, i in articles
-					li(class='accordion-item' data-accordion-item)
-						a(href='#article.id' class='accordion-title title')= article.title
-						div(id='article.id' class='accordion-content' data-tab-content)
-							span(class='label')= 'Author: ' + article.author							
-							p= article.body
-							div(class='accordion-footer')
-								a(href="/read/articles/article/" + article.id)= "View " + article.title
+		if articles
+			div(class='row articles')
+				div(class='v-scroll list')
+					ul(class='accordion' data-accordion data-allow-all-closed='true')
+						each article, i in articles
+							li(class='accordion-item' data-accordion-item)
+								a(href='#article.id' class='accordion-title title')= article.title
+								div(id='article.id' class='accordion-content' data-tab-content)
+									span(class='label')= 'Author: ' + article.author							
+									p= article.body
+									div(class='accordion-footer')
+										a(href="/read/articles/article/" + article.id)= "View " + article.title
